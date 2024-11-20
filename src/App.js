@@ -1,9 +1,8 @@
 import React , {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CameraTable from './components/CameraTable';
-import SearchBar from './components/SearchBar';
 import { CiLocationOn } from "react-icons/ci";
-import { fetchCameras, updateCameraStatus } from './services/api';
+import { fetchCameras } from './services/api';
 
 
 const App = () => {
