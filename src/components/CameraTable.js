@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
-// import { filterData } from '../App';
 import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import Button from '@mui/material/Button'
 import { fetchCameras, updateCameraStatus } from '../services/api';
@@ -107,17 +106,7 @@ const CameraTable = ({ filterData }) => {
       );
     }
   };
-/*
-  useEffect(() => {
-    setPaginatedData(
-      dataToDisplay.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-      )
-    );
-  }, [dataToDisplay, currentPage, itemsPerPage]);
-  
-*/
+
   const handleDelete = (id) => {
     // Confirm deletion
     if (window.confirm("Are you sure you want to delete this camera?")) {
@@ -144,17 +133,6 @@ const CameraTable = ({ filterData }) => {
       console.log("Camera deleted. Updated data:", updatedCameraData);
     }
   };
-  
-  
-
-  /*
-  const paginatedData = Array.isArray(cameraData)
-    ? cameraData.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-      )
-    : [];
-    */
 
   const paginatedData = Array.isArray(dataToDisplay)
     ? dataToDisplay.slice(
@@ -179,13 +157,13 @@ const CameraTable = ({ filterData }) => {
                 }
               />
             </th>
-            <th>Name</th>
-            <th>Health</th>
-            <th>Location</th>
-            <th>Recorder</th>
-            <th>Tasks</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th >NAME</th>
+            <th>HEALTH</th>
+            <th>LOCATION</th>
+            <th>RECORDER</th>
+            <th>TASKS</th>
+            <th>STATUS</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
@@ -221,10 +199,10 @@ const CameraTable = ({ filterData }) => {
       .filter(([key]) => key !== 'id' && key !== '_id') // Exclude id and _id
       .map(([key, value]) => (
           <div key={key}>
-            <strong>{key}:</strong> {value}
+            <span>{key}:</span> {value}
           </div>
       ))
-  : 'No health data available'}
+  : 'N/A'}
 
               </td>
               <td>{camera.location || 'N/A'}</td>
