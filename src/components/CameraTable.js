@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
-import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import Button from '@mui/material/Button'
 import { fetchCameras, updateCameraStatus } from '../services/api';
 
